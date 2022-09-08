@@ -62,19 +62,19 @@ export default function TextForm(props) {
         <div className="container" style={{color: props.mode === 'dark'?'white':'black'}}>
             <h2>{props.heading}</h2>
             <div className="mb-3">
-                <textarea value={text} type="text" onChange={handleOnChange} style={{backgroundColor: props.mode === 'light' ? 'white' : 'grey', color: props.mode === 'dark'?'white': 'black'}} id="myBox" rows="8" className="form-control"></textarea>
+                <textarea value={text} type="text" onChange={handleOnChange} style={{backgroundColor: props.mode === 'light' ? 'white' : 'black', color: props.mode === 'dark'?'white': 'black'}} id="myBox" rows="8" className="form-control"></textarea>
             </div>
-            <button className={`btn btn-primary mx-2`} onClick={handleUpClick}>Convert To Upper Case</button>
-            <button className={`btn btn-primary mx-2`} onClick={handleLoClick}>Convert To Lower Case</button>
-            <button className={`btn btn-primary mx-2`} onClick={handleTiClick}>Convert To Title Case</button>
-            <button className={`btn btn-primary mx-2`} onClick={handleClClick}>Clear Text</button>
+            <button className={`btn btn-dark mx-2`} onClick={handleUpClick}>Convert To Upper Case</button>
+            <button className={`btn btn-dark mx-2`} onClick={handleLoClick}>Convert To Lower Case</button>
+            <button className={`btn btn-dark mx-2`} onClick={handleTiClick}>Convert To Title Case</button>
+            <button className={`btn btn-dark mx-2`} onClick={handleClClick}>Clear Text</button>
         </div>
         <div className="container my-3" style={{color: props.mode === 'dark'?'white':'black'}}>
             <h1>Your text summary</h1>
             <p>{countWords(text)} words and {text.length} characters.</p>
             <p>{0.008 * text.split(" ").length} Minute read</p>
             <hr/>
-            <h2>Preview</h2>
+            <h2 >Preview</h2>
             <p>{text.length>0 ?text:"Enter something in the textbox above to preview it here"}</p>
             <hr/>
         </div>

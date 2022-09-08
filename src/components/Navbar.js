@@ -1,6 +1,7 @@
 import React from "react";
 
 import PropTypes from "prop-types";
+// import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   return (
@@ -8,6 +9,9 @@ export default function Navbar(props) {
       className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`}
     >
       <div className="container-fluid">
+        {/* <Link className="navbar-brand" to="/">
+          {props.title}
+        </Link> */}
         <a className="navbar-brand" href="/">
           {props.title}
         </a>
@@ -30,9 +34,9 @@ export default function Navbar(props) {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
+              {/* <Link className="nav-link" to="/about">
                 {props.aboutText}
-              </a>
+              </Link> */}
             </li>
           </ul>
           {/* <form className="d-flex" role="search">
@@ -56,7 +60,12 @@ export default function Navbar(props) {
               role="switch"
               id="flexSwitchCheckDefault"
             />
-            <label className={`form-check-label text-${props.mode ==='light' ? 'dark' : 'light'}`}htmlFor="flexSwitchCheckDefault">
+            <label
+              className={`form-check-label text-${
+                props.mode === "light" ? "dark" : "light"
+              }`}
+              htmlFor="flexSwitchCheckDefault"
+            >
               DarkMode
             </label>
           </div>
@@ -70,7 +79,12 @@ export default function Navbar(props) {
               htmlFor="mode"
               id="flexSwitchCheckDefault1"
             />
-            <label className={`form-check-label text-${props.mode ==='light' ? 'dark' : 'light'}`}htmlFor="flexSwitchCheckDefault">
+            <label
+              className={`form-check-label text-${
+                props.mode === "light" ? "dark" : "light"
+              }`}
+              htmlFor="flexSwitchCheckDefault"
+            >
               Blue DarkMode
             </label>
           </div>

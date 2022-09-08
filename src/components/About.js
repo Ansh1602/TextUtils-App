@@ -13,23 +13,23 @@ export default function About(props) {
 
     const [btnText, setBtnText] = useState("Enable Dark Mode")
 
-    // const toggleMode = ()=>{
-    //     if(myStyle.color === 'black'){
-    //         setMyStyle({
-    //             color: "white",
-    //             backgroundColor: "black",
-    //             border: '1px solid white'
-    //         })
-    //         setBtnText("Enable Light Mode")
-    //     }
-    //     else{
-    //         setMyStyle({
-    //             color: "black",
-    //             backgroundColor: "white"
-    //         })
-    //         setBtnText("Enable Dark Mode")   
-    //     }
-    // }
+    const toggleMode = ()=>{
+        if(myStyle.color === 'black'){
+            setMyStyle({
+                color: "white",
+                backgroundColor: "black",
+                border: '1px solid white'
+            })
+            setBtnText("Enable Light Mode")
+        }
+        else{
+            setMyStyle({
+                color: "black",
+                backgroundColor: "white"
+            })
+            setBtnText("Enable Dark Mode")   
+        }
+    }
 
 
   return (
@@ -135,7 +135,7 @@ export default function About(props) {
         </div>
 
         <div className="container">
-            <button type="button"  className="btn btn-primary my-2">{btnText}</button>
+            <button type="button"  className="btn btn-primary my-2" onClick={toggleMode}>{btnText}</button>
         </div>
     </div>
   );
