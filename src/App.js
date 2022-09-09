@@ -4,12 +4,12 @@ import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import React, { useState } from 'react';
 import Alert from "./components/Alert";
-// import About from "./components/About";
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route,
-// } from "react-router-dom";
+import About from "./components/About";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 
 
@@ -35,7 +35,7 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor = 'rgb(0 0 0)';
       showAlert('Dark Mode has been enabled', "success");
-      document.title = 'TextUtils - Dark Mode';
+      // document.title = 'TextUtils - Dark Mode';
       // setInterval(() => {
       //   document.title = 'TextUtils is Amazing Mode'
       // }, 2000);
@@ -47,7 +47,7 @@ function App() {
       setMode('light');
       document.body.style.backgroundColor = "white";
       showAlert('Light Mode has been enabled', "success");
-      document.title = 'TextUtils - Light Mode';
+      // document.title = 'TextUtils - Light Mode';
     }
   }
 
@@ -74,19 +74,19 @@ function App() {
     
       {/* <Navbar title="TextUtils" aboutText = "This is about" /> */}
       {/* <Navbar/> */}
-      {/* <Router> */}
+      <Router>
         <Navbar title="TextUtils" aboutText="About" mode={mode} toggleMode={toggleMode} blueMode={blueMode}/>
         <Alert alert={alert}/>
-        {/* <div className="container my-3">
+        <div className="container my-3">
           <Routes>
-            <Route path="/" element={<TextForm heading="Enter the text to analyze" mode={mode} showAlert={showAlert} />} />
+            <Route path="/" element={<TextForm heading=" Try TextUtils - Word Counter, Character Counter, Remove Extra Spaces" mode={mode} showAlert={showAlert} />} />
             <Route path="/about" element={<About mode={mode}  />} />
           </Routes>
-        </div> */}
-      <div className="container my-3">
+        </div>
+      {/* <div className="container my-3">
         <TextForm heading="Enter the text to analyze" mode={mode} showAlert={showAlert} />
-      </div>
-      {/* </Router> */}
+      </div> */}
+      </Router>
       
     </>
   );
