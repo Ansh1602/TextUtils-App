@@ -56,7 +56,7 @@ export default function TextForm(props) {
     
     const copyTxt = () => {
         navigator.clipboard.writeText(text);
-        props.showAlert("Text Copied!", "success");
+        props.showAlert("Text Copied to Clipboard!", "success");
     }
 
     const handleOnChange = (event) => {
@@ -89,7 +89,7 @@ export default function TextForm(props) {
             <div className="container my-3" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <h1>Your text summary</h1>
                 {/* <p>{countWords(text)} words and {text.length} characters.</p> */}
-                <p>{text.split(" ").filter((element) => { return element.length !== 0 }).length} words and {text.length} characters.</p>
+                <p>{text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} words and {text.length} characters.</p>
                 <p>{0.008 * text.split(" ").filter((element) => { return element.length !== 0 }).length} Minute read</p>
                 <hr />
                 <h2 >Preview</h2>
