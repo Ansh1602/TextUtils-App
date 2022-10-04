@@ -4,12 +4,12 @@ import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import React, { useState } from 'react';
 import Alert from "./components/Alert";
-import About from "./components/About";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+// import About from "./components/About";
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route,
+// } from "react-router-dom";
 
 
 
@@ -19,7 +19,7 @@ function App() {
   const [mode, setMode] = useState('light');  // Wheater dark mode is enabled or not
   const [alert, setAlert] = useState(null);
 
-  const showAlert =(message,type) => {
+  const showAlert = (message, type) => {
     setAlert({
       msg: message,
       type: type,
@@ -30,8 +30,8 @@ function App() {
     }, 2000);
   }
 
-  const toggleMode = ()=>{
-    if(mode === 'light'){
+  const toggleMode = () => {
+    if (mode === 'light') {
       setMode('dark');
       document.body.style.backgroundColor = 'rgb(0 0 0)';
       showAlert('Dark Mode has been enabled', "success");
@@ -43,7 +43,7 @@ function App() {
       //   document.title = 'Install TextUtils Now '
       // }, 1500);
     }
-    else{
+    else {
       setMode('light');
       document.body.style.backgroundColor = "white";
       showAlert('Light Mode has been enabled', "success");
@@ -52,14 +52,14 @@ function App() {
   }
 
 
-  const blueMode = ()=>{
-    if(mode === 'light'){
+  const blueMode = () => {
+    if (mode === 'light') {
       setMode('dark');
       document.body.style.backgroundColor = 'rgb(21 33 64)';
       showAlert('Blue Mode has been enabled', "success");
       document.title = 'TextUtils - Blue Mode';
     }
-    else{
+    else {
       setMode('light');
       document.body.style.backgroundColor = "white";
       showAlert('Light Mode has been enabled', "success");
@@ -67,27 +67,28 @@ function App() {
     }
   }
 
-  
+
 
   return (
     <>
-    
+
       {/* <Navbar title="TextUtils" aboutText = "This is about" /> */}
       {/* <Navbar/> */}
-      <Router>
-        <Navbar title="TextUtils" aboutText="About" mode={mode} toggleMode={toggleMode} blueMode={blueMode}/>
-        <Alert alert={alert}/>
+      {/* <Router> */}
+        <Navbar title="TextUtils" aboutText="About" mode={mode} toggleMode={toggleMode} blueMode={blueMode} />
+        <Alert alert={alert} />
         <div className="container my-3">
+          <TextForm heading=" Try TextUtils - Word Counter, Character Counter, Remove Extra Spaces" mode={mode} showAlert={showAlert} />
+
+        </div>
+        {/* <div className="container my-3">
           <Routes>
             <Route path="/" element={<TextForm heading=" Try TextUtils - Word Counter, Character Counter, Remove Extra Spaces" mode={mode} showAlert={showAlert} />} />
             <Route path="/about" element={<About mode={mode}  />} />
           </Routes>
-        </div>
-      {/* <div className="container my-3">
-        <TextForm heading="Enter the text to analyze" mode={mode} showAlert={showAlert} />
-      </div> */}
-      </Router>
-      
+        </div> */}
+      {/* </Router> */}
+
     </>
   );
 }
